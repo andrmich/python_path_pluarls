@@ -1,5 +1,9 @@
+#!/usr/bin/env python3
 """
 Retrive and print words from a URL.
+
+Usage:
+    python3 words.py <URL>
 """
 
 from urllib.request import urlopen
@@ -25,13 +29,13 @@ def fetch_words(url):
     return story_words
 
 
-# 'http://sixty-north.com/c/t.txt'
+# http://sixty-north.com/c/t.txt
 
 def print_items(items):
     """
     Print items one per line.
     :param items: An iterable series of printable items.
-    :return:
+
     """
     for item in items:
         print(item)
@@ -41,11 +45,11 @@ def main(url):
     """
     Print each word from a text document from a URL.
     :param url: The URL of a UTF-8 text document.
-    :return:
+
     """
     words = fetch_words(url)
     print_items(words)
 
 
 if __name__ == '__main__':
-    main(sys.argv[1])
+    main(sys.argv[1])  # The 0th arg is the module filename
